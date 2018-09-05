@@ -9,6 +9,7 @@
 * forward.py --> design forward structure of neural networks
 ## **Programming environment**
 * python 3.7
+* tensorflow 1.10.0
 * opencv 3.4.2.17
-* numpy 1.15.1
+* numpy 1.14.5
 
