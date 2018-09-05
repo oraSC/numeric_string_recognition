@@ -1,6 +1,6 @@
 # numeric_string_recognition
 
-# **docment introduction**
+## **docment introduction**
 * data_sets --> deposit mnist data set
 * app.py --> application
 * test.py --> to get accuracy
