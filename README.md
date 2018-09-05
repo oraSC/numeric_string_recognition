@@ -1,3 +1,3 @@
 # numeric_string_recognition
-## 二级标题
-### 三级标题
+## * data_sets --> mnist data set
+## * app.py --> application
