@@ -1,10 +1,14 @@
 # numeric_string_recognition
-
-## **docment introduction**
+***
+## **Docment Introduction**
 * data_sets --> deposit mnist data set
 * app.py --> application
 * test.py --> to get accuracy
 * image.py --> image preprocessing 
 * backward.py --> design backward structure of neural networks
 * forward.py --> design forward structure of neural networks
+## **Programming environment**
+* python 3.7
+* opencv 3.4.2.17
+* numpy 1.15.1
 
