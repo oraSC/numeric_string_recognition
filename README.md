@@ -2,11 +2,9 @@
 ***
 ## **Docment Introduction**
 * data_sets --> deposit mnist data set
+* model --> deposit trained nerual networks model 
 * app.py --> application
-* test.py --> to get accuracy
-* image.py --> image preprocessing 
-* backward.py --> design backward structure of neural networks
-* forward.py --> design forward structure of neural networks
+* train.py --> train neural networks , save networks model into model folder 
 ## **Programming environment**
 * python 3.7
 * tensorflow 1.10.0
