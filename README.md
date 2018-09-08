@@ -5,9 +5,10 @@
 * model --> deposit trained nerual networks model 
 * app.py --> application
 * train.py --> build and train neural networks , save networks model into model folder 
+* test_img --> define Test_Img and Numeric_String class
 ## **Programming environment**
 * python 3.7
 * tensorflow 1.10.0
 * opencv 3.4.2.17
 * numpy 1.14.5
-
+* selectivesearch 0.4
