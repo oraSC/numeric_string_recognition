@@ -4,7 +4,7 @@ from tensorflow.examples.tutorials.mnist import input_data
 
 INPUT_NODE = 784
 OUTPUT_NODE = 10
-LAYER1_NODE = 500
+LAYER1_NODE = 700
 REGULARIZER = 0.0001
 BATCH_SIZE = 100
 LEARNING_RATE_BASE = 0.8
@@ -34,7 +34,7 @@ def forward(input_tensor , average_class , regularizer ):
     # 判断是否使用滑动平均
     if average_class == None :
         layer1 = tf.nn.relu(tf.matmul(input_tensor , w1) + b1)
-        out_tensor = tf.nn.relu(tf.matmul(layer1 , w2) + b2)
+        out_tensor = tf.matmul(layer1 , w2) + b2
     else :
         layer1 =tf.nn.relu(tf.matmul(input_tensor , average_class.average(w1)) + average_class.average(b1))
         out_tensor = tf.nn.relu(tf.matmul(layer1 , average_class.average(w2)) + average_class.average(b2))

@@ -13,10 +13,10 @@ class Numeric_String:
         fig , axes = plt.subplots(ncols = 1 , nrows =  self.total_num)
         for index , region in enumerate(numericstring_regions) :
             x, y, w, h = (region[0], region[1], region[2], region[3])
-            top = int(y - h/2) if int(y - h/2) > 0 else 1
-            bottom = int(y + h*1.5) if int(y + h*1.5) < img.shape[0] else img.shape[0] - 1
-            left = int(x - w/2) if int(x - w/2) > 0 else 1
-            right = int(x + w*1.5) if int(x + w*1.5) < img.shape[1] else img.shape[1] - 1
+            top = int(y - h/4) if int(y - h/4) > 0 else 1
+            bottom = int(y + h*1.25) if int(y + h*1.25) < img.shape[0] else img.shape[0] - 1
+            left = int(x - w/4) if int(x - w/4) > 0 else 1
+            right = int(x + w*1.25) if int(x + w*1.25) < img.shape[1] else img.shape[1] - 1
             mask_img = img[ top : bottom ,left : right ]
             self.number_img.append(mask_img)
             axes[index].imshow(mask_img)

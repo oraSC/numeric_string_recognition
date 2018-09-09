@@ -13,16 +13,24 @@ def image_pre(img):
     img = cv2.resize(img , (28,28))
     plt.figure('1'), plt.subplot(332), plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB)), plt.title('resize')
     img_gray = cv2.cvtColor(img , cv2.COLOR_BGR2GRAY)
-    plt.figure('1'), plt.subplot(333), plt.imshow(img_gray, 'gray'), plt.title('gray')
+    img_gray_not = 255 - img_gray
     ret , img_threshold = cv2.threshold(img_gray , 0 ,255 , cv2.THRESH_BINARY + cv2.THRESH_OTSU)
-    plt.figure('1'), plt.subplot(334), plt.imshow(img_threshold, 'gray'), plt.title('img_threshold')
-    img_not = cv2.bitwise_not(img_threshold)
-    # img_not = img_threshold
-    plt.figure('1'), plt.subplot(335), plt.imshow(img_not, 'gray'), plt.title('img_not')
-    plt.show()
-    img_arr = img_not.reshape([1 , 784])
+
+    img_mask = cv2.bitwise_not(img_threshold)
+
+    img_processed = cv2.bitwise_and( img_mask , img_gray_not)
+
+
+    img_arr = img_processed.reshape([1 , 784])
     img_arr = img_arr.astype(np.float)
     img_arr = np.multiply(img_arr , 1.0/255.0)
+
+    plt.figure('1'), plt.subplot(333), plt.imshow(img_gray, 'gray'), plt.title('gray')
+    plt.figure('1'), plt.subplot(334), plt.imshow(img_gray_not, 'gray'), plt.title('gray_not')
+    plt.figure('1'), plt.subplot(335), plt.imshow(img_threshold, 'gray'), plt.title('img_threshold')
+    plt.figure('1'), plt.subplot(336), plt.imshow(img_mask, 'gray'), plt.title('img_mask')
+    plt.figure('1'), plt.subplot(337), plt.imshow(img_processed, 'gray'), plt.title('img_processed')
+    plt.show()
     return img_arr
 
 def predict(img_array):
@@ -69,7 +77,7 @@ def get_img():
 def main():
     img_num = 1
     for i in range(img_num):
-        img_origin = cv2.imread('./test_pic/0.png' )
+        img_origin = cv2.imread('./test_pic/10.png' )
         app(img_origin)
         plt.figure('1'),plt.subplot(331),plt.imshow(cv2.cvtColor(img_origin , cv2.COLOR_BGR2RGB)) ,plt.title('origin')
         plt.show()
