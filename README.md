@@ -5,7 +5,8 @@
 * model --> deposit trained nerual networks model 
 * app.py --> application
 * train.py --> build and train neural networks , save networks model into model folder 
-* test_img --> define Test_Img and Numeric_String class
+* test_img.py --> define Test_Img and Numeric_String class
+* test_accuracy.py --> get accuracy of test data sets in built nerual networks model
 ## **Programming environment**
 * python 3.7
 * tensorflow 1.10.0
